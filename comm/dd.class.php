@@ -433,13 +433,10 @@ class duoduo {
 		    $set_arr[0] = $set_con_arr;
 	    } else {
 		    $set_arr = $set_con_arr;
-
-
 	    }
 
 	    if(!array_key_exists('f',$set_arr[0])){
             foreach ($set_arr[0] as $k => $v) {
-
             	$set = "`$k`='".$this->real_escape_string($v)."'," . $set;
             }
 			$set = substr($set, 0, strlen($set) - 1);
@@ -481,7 +478,7 @@ class duoduo {
 	
 	function real_escape_string($v){
 		if(strpos($v,'\"')===false && strpos($v,"\'")===false){
-			$v=mysqli_real_escape_string($v);
+			$v=mysqli_real_escape_string($this->link, $v);
 		}
 		return $v;
 	}
