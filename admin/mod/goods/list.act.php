@@ -108,5 +108,5 @@ else{
 			$data[$key]['ddusername']=$duoduo->select('user','ddusername',"id=".$vo['uid']);
 		}
 	}
-	echo mysql_error();
+	echo mysqli_error($duoduo->link);
 }

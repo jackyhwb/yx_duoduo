@@ -92,9 +92,9 @@ if($_POST['sub']!=''){
 		$duoduo->update_sort($id,$_POST['sort'],MOD);
 	}
 	
-	if(mysql_error()!=''){
+	if(mysqli_error($duoduo->link)!=''){
 		echo $duoduo->lastsql;
-		exit(mysql_error());
+		exit(mysqli_error($duoduo->link));
 	}
 	
 	if(function_exists(MOD.'_'.ACT)){

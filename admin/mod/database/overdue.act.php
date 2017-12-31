@@ -72,7 +72,7 @@ if($_GET['jiance']!=''){
 							$save['price']=$return['price'];
 						}
 						$duoduo->update('goods',$save,'id='.$row['id']);
-						echo mysql_error();
+						echo mysqli_error($duoduo->link);
 					}				
 				}
 			}else{
@@ -81,10 +81,10 @@ if($_GET['jiance']!=''){
 				if($butongguo){
 					if($auto_del==0){
 						$duoduo->update('goods',array('xiajia'=>'1'),'id in('.implode(',',$butongguo).')');
-						echo mysql_error();
+                        echo mysqli_error($duoduo->link);
 					}else{	
 						$duoduo->delete('goods','id in('.implode(',',$butongguo).')');
-						echo mysql_error();
+						echo mysqli_error($duoduo->link);
 					}
 				}		
 			}

@@ -44,12 +44,12 @@ if($_POST['sub']!=''){
 	}
 	if($id==0){
 	    $id=$duoduo->insert('collect',$add);
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 		$word='保存成功';
 	}
 	else{
 	    $duoduo->update('collect',$add,'id="'.$id.'"');
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 		$word='修改成功';
 	}
 	jump('-2',$word);

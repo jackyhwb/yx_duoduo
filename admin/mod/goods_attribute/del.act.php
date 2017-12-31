@@ -24,7 +24,7 @@ else{
 	}
 	$ids=implode($ids,',');	
 	$duoduo->delete_id_in($ids,$table);
-	$error=mysql_error();
+	$error=mysqli_error($duoduo->link);
     if(empty($error)){
 		include(ADMINROOT.'/mod/public/mod.update.php');
 		if($reycle==1){

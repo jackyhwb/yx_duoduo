@@ -50,7 +50,7 @@ if($_GET['wufanli']==1){
 			$duoduo->update("goods",array('del'=>1),"id=".$vo['id']);
 			continue;
 		}
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 	}
 	$page++;
 	PutInfo("第".($page-1)."页".$page_size."件商品处理完成，接下来处理第".$page."页",u(MOD,ACT,array('page'=>$page,'wufanli'=>1,'leixing'=>$leixing)));
@@ -139,5 +139,5 @@ else{
 			$data[$key]['ddusername']=$duoduo->select('user','ddusername',"id=".$vo['uid']);
 		}
 	}
-	echo mysql_error();
+	echo mysqli_error($duoduo->link);
 }

@@ -65,7 +65,7 @@ if(isset($_GET['eventid']) && $_GET['eventid']!=''){
 			if($i>0){
 				$re=array('s'=>1,'r'=>'更新成功');
 			}else{
-				$re=array('s'=>2,'r'=>mysql_error());
+				$re=array('s'=>2,'r'=>mysqli_error($duoduo->link));
 			}
 			//给会员结算
 				unset($arr);

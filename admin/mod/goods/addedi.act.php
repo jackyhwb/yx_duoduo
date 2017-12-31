@@ -122,7 +122,7 @@ if($_POST['sub']!=''){
 		if($id>0){
 			jump(u(MOD,'list',array('code'=>$_POST['code'])),'添加成功');
 		}else{
-			echo mysql_error();
+			echo mysqli_error($duoduo->link);
 			exit();
 			jump(-1,'添加失败');
 		}

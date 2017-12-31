@@ -100,7 +100,7 @@ if($collect['laiyuan']==2){
 				$num++;
 			}
 		}
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 	}
 }
 else{

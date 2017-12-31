@@ -1,26 +1,26 @@
 <?php   if(!defined('DEDEINC')) exit("Request Error!");
 /**
- * Êý¾Ý¿âÀà
- * ËµÃ÷:ÏµÍ³µ×²ãÊý¾Ý¿âºËÐÄÀà
- *      µ÷ÓÃÕâ¸öÀàÇ°,ÇëÏÈÉè¶¨ÕâÐ©Íâ²¿±äÁ¿
+ * ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
+ * Ëµï¿½ï¿½:ÏµÍ³ï¿½×²ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°,ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ð©ï¿½â²¿ï¿½ï¿½ï¿½ï¿½
  *      $GLOBALS['cfg_dbhost'];
  *      $GLOBALS['cfg_dbuser'];
  *      $GLOBALS['cfg_dbpwd'];
  *      $GLOBALS['cfg_dbname'];
  *      $GLOBALS['cfg_dbprefix'];
  *
- * @version        $Id: dedesql.class.php 3 20:57 2010Äê7ÔÂ7ÈÕZ tianya $
+ * @version        $Id: dedesql.class.php 3 20:57 2010ï¿½ï¿½7ï¿½ï¿½7ï¿½ï¿½Z tianya $
  * @package        DedeCMS.Libraries
  * @copyright      Copyright (c) 2007 - 2010, DesDev, Inc.
  * @license        http://help.dedecms.com/usersguide/license.html
  * @link           http://www.dedecms.com
  */
 
-// ÔÚ¹¤³ÌËùÓÐÎÄ¼þÖÐ¾ù²»ÐèÒªµ¥¶À³õÊ¼»¯Õâ¸öÀà£¬¿ÉÖ±½ÓÓÃ $dsql »ò $db ½øÐÐ²Ù×÷
-// ÎªÁË·ÀÖ¹´íÎó£¬²Ù×÷Íêºó²»±Ø¹Ø±ÕÊý¾Ý¿â
+// ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ $dsql ï¿½ï¿½ $db ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
+// Îªï¿½Ë·ï¿½Ö¹ï¿½ï¿½ï¿½ó£¬²ï¿½ï¿½ï¿½ï¿½ï¿½ó²»±Ø¹Ø±ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
 $dsql = $db = new DedeSql(FALSE);
 /**
- * DedeÊý¾Ý¿âÀà
+ * Dedeï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
  *
  * @package        DedeSql
  * @subpackage     DedeCMS.Libraries
@@ -39,11 +39,11 @@ class DedeSql
     var $parameters;
     var $isClose;
     var $safeCheck;
-    var $recordLog=false; // ¼ÇÂ¼ÈÕÖ¾µ½data/mysqli_record_log.inc±ãÓÚ½øÐÐµ÷ÊÔ
+    var $recordLog=false; // ï¿½ï¿½Â¼ï¿½ï¿½Ö¾ï¿½ï¿½data/mysqli_record_log.incï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ðµï¿½ï¿½ï¿½
 	var $isInit=false;
 	var $pconnect=false;
 
-    //ÓÃÍâ²¿¶¨ÒåµÄ±äÁ¿³õÊ¼Àà£¬²¢Á¬½ÓÊý¾Ý¿â
+    //ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
     function __construct($pconnect=FALSE,$nconnect=FALSE)
     {
         $this->isClose = FALSE;
@@ -74,7 +74,7 @@ class DedeSql
         $this->Open($pconnect);
     }
 
-    //ÓÃÖ¸¶¨²ÎÊý³õÊ¼Êý¾Ý¿âÐÅÏ¢
+    //ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½Ï¢
     function SetSource($host,$username,$pwd,$dbname,$dbprefix="dede_")
     {
         $this->dbHost = $host;
@@ -89,17 +89,17 @@ class DedeSql
         mysql_select_db($dbname);
     }
 
-    //ÉèÖÃSQLÀïµÄ²ÎÊý
+    //ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½Ä²ï¿½ï¿½ï¿½
     function SetParameter($key,$value)
     {
         $this->parameters[$key]=$value;
     }
 
-    //Á¬½ÓÊý¾Ý¿â
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
     function Open($pconnect=FALSE)
     {
         global $dsql;
-        //Á¬½ÓÊý¾Ý¿â
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
         if($dsql && !$dsql->isClose && $dsql->isInit)
         {
             $this->linkID = $dsql->linkID;
@@ -123,14 +123,14 @@ class DedeSql
                 $i++;
             }
 			
-            //¸´ÖÆÒ»¸ö¶ÔÏó¸±±¾
+            //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ó¸±±ï¿½
             CopySQLPoint($this);
         }
 		
-        //´¦Àí´íÎó£¬³É¹¦Á¬½ÓÔòÑ¡ÔñÊý¾Ý¿â
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬³É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
         if(!$this->linkID)
         {
-            $this->DisplayError("DedeCms´íÎó¾¯¸æ£º<font color='red'>Á¬½ÓÊý¾Ý¿âÊ§°Ü£¬¿ÉÄÜÊý¾Ý¿âÃÜÂë²»¶Ô»òÊý¾Ý¿â·þÎñÆ÷³ö´í£¡</font>");
+            $this->DisplayError("DedeCmsï¿½ï¿½ï¿½ó¾¯¸æ£º<font color='red'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ë²»ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font>");
             exit();
         }
 		$this->isInit = TRUE;
@@ -146,22 +146,22 @@ class DedeSql
         return TRUE;
     }
     
-    //ÎªÁË·ÀÖ¹²É¼¯µÈÐèÒª½Ï³¤ÔËÐÐÊ±¼äµÄ³ÌÐò³¬Ê±£¬ÔÚÔËÐÐÕâÀà³ÌÐòÊ±ÉèÖÃÏµÍ³µÈ´ýºÍ½»»¥Ê±¼ä
+    //Îªï¿½Ë·ï¿½Ö¹ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ï³ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½È´ï¿½ï¿½Í½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
     function SetLongLink()
     {
         @mysql_query("SET interactive_timeout=3600, wait_timeout=3600 ;", $this->linkID);
     }
 
-    //»ñµÃ´íÎóÃèÊö
+    //ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     function GetError()
     {
-        $str = mysql_error();
+        $str = mysqli_error($duoduo->link);
         return $str;
     }
 
-    //¹Ø±ÕÊý¾Ý¿â
-    //mysqlÄÜ×Ô¶¯¹ÜÀí·Ç³Ö¾ÃÁ¬½ÓµÄÁ¬½Ó³Ø
-    //Êµ¼ÊÉÏ¹Ø±Õ²¢ÎÞÒâÒå²¢ÇÒÈÝÒ×³ö´í£¬ËùÒÔÈ¡ÏûÕâº¯Êý
+    //ï¿½Ø±ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
+    //mysqlï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ç³Ö¾ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½Ó³ï¿½
+    //Êµï¿½ï¿½ï¿½Ï¹Ø±Õ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å²¢ï¿½ï¿½ï¿½ï¿½ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½âº¯ï¿½ï¿½
     function Close($isok=FALSE)
     {
         $this->FreeResultAll();
@@ -173,12 +173,12 @@ class DedeSql
         }
     }
 
-    //¶¨ÆÚÇåÀíËÀÁ¬½Ó
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     function ClearErrLink()
     {
     }
 
-    //¹Ø±ÕÖ¸¶¨µÄÊý¾Ý¿âÁ¬½Ó
+    //ï¿½Ø±ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
     function CloseLink($dblink)
     {
         @mysql_close($dblink);
@@ -194,7 +194,7 @@ class DedeSql
         }
     }
 
-    //Ö´ÐÐÒ»¸ö²»·µ»Ø½á¹ûµÄSQLÓï¾ä£¬Èçupdate,delete,insertµÈ
+    //Ö´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½ä£¬ï¿½ï¿½update,delete,insertï¿½ï¿½
     function ExecuteNoneQuery($sql='')
     {
         global $dsql;
@@ -220,12 +220,12 @@ class DedeSql
                 $this->queryString = str_replace("@".$key,"'$value'",$this->queryString);
             }
         }
-        //SQLÓï¾ä°²È«¼ì²é
+        //SQLï¿½ï¿½ä°²È«ï¿½ï¿½ï¿½
         if($this->safeCheck) CheckSql($this->queryString,'update');
 		$t1 = ExecTime();
 		$rs = mysql_query($this->queryString,$this->linkID);
 		
-        //²éÑ¯ÐÔÄÜ²âÊÔ
+        //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
         if($this->recordLog) {
 			$queryTime = ExecTime() - $t1;
             $this->RecordLog($queryTime);
@@ -235,7 +235,7 @@ class DedeSql
     }
 
 
-    //Ö´ÐÐÒ»¸ö·µ»ØÓ°Ïì¼ÇÂ¼ÌõÊýµÄSQLÓï¾ä£¬Èçupdate,delete,insertµÈ
+    //Ö´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½ä£¬ï¿½ï¿½update,delete,insertï¿½ï¿½
     function ExecuteNoneQuery2($sql='')
     {
         global $dsql;
@@ -263,7 +263,7 @@ class DedeSql
 		$t1 = ExecTime();
         mysql_query($this->queryString,$this->linkID);
 		
-        //²éÑ¯ÐÔÄÜ²âÊÔ
+        //ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
         if($this->recordLog) {
 			$queryTime = ExecTime() - $t1;
             $this->RecordLog($queryTime);
@@ -288,7 +288,7 @@ class DedeSql
         return mysql_affected_rows($this->linkID);
     }
 
-    //Ö´ÐÐÒ»¸ö´ø·µ»Ø½á¹ûµÄSQLÓï¾ä£¬ÈçSELECT£¬SHOWµÈ
+    //Ö´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½ä£¬ï¿½ï¿½SELECTï¿½ï¿½SHOWï¿½ï¿½
     function Execute($id="me", $sql='')
     {
         global $dsql;
@@ -306,7 +306,7 @@ class DedeSql
             $this->SetQuery($sql);
         }
 		
-        //SQLÓï¾ä°²È«¼ì²é
+        //SQLï¿½ï¿½ä°²È«ï¿½ï¿½ï¿½
         if($this->safeCheck)
         {
             CheckSql($this->queryString);
@@ -323,7 +323,7 @@ class DedeSql
         
         if(!empty($this->result[$id]) && $this->result[$id]===FALSE)
         {
-            $this->DisplayError(mysql_error()." <br />Error sql: <font color='red'>".$this->queryString."</font>");
+            $this->DisplayError(mysqli_error($this->link)." <br />Error sql: <font color='red'>".$this->queryString."</font>");
         }
     }
 
@@ -332,7 +332,7 @@ class DedeSql
         $this->Execute($id,$sql);
     }
 
-    //Ö´ÐÐÒ»¸öSQLÓï¾ä,·µ»ØÇ°Ò»Ìõ¼ÇÂ¼»ò½ö·µ»ØÒ»Ìõ¼ÇÂ¼
+    //Ö´ï¿½ï¿½Ò»ï¿½ï¿½SQLï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼
     function GetOne($sql='',$acctype=MYSQL_ASSOC)
     {
         global $dsql;
@@ -362,7 +362,7 @@ class DedeSql
         }
     }
 
-    //Ö´ÐÐÒ»¸ö²»ÓëÈÎºÎ±íÃûÓÐ¹ØµÄSQLÓï¾ä,CreateµÈ
+    //Ö´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎºÎ±ï¿½ï¿½ï¿½ï¿½Ð¹Øµï¿½SQLï¿½ï¿½ï¿½,Createï¿½ï¿½
     function ExecuteSafeQuery($sql,$id="me")
     {
         global $dsql;
@@ -378,8 +378,8 @@ class DedeSql
         $this->result[$id] = @mysql_query($sql,$this->linkID);
     }
 
-    //·µ»Øµ±Ç°µÄÒ»Ìõ¼ÇÂ¼²¢°ÑÓÎ±êÒÆÏòÏÂÒ»¼ÇÂ¼
-    // MYSQL_ASSOC¡¢MYSQL_NUM¡¢MYSQL_BOTH
+    //ï¿½ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Â¼
+    // MYSQL_ASSOCï¿½ï¿½MYSQL_NUMï¿½ï¿½MYSQL_BOTH
     function GetArray($id="me",$acctype=MYSQL_ASSOC)
     {
         if($this->result[$id]==0)
@@ -404,7 +404,7 @@ class DedeSql
         }
     }
 
-    // ¼ì²âÊÇ·ñ´æÔÚÄ³Êý¾Ý±í
+    // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ý±ï¿½
     function IsTable($tbname)
     {
         global $dsql;
@@ -421,7 +421,7 @@ class DedeSql
         return FALSE;
     }
 
-    //»ñµÃMySqlµÄ°æ±¾ºÅ
+    //ï¿½ï¿½ï¿½MySqlï¿½Ä°æ±¾ï¿½ï¿½
     function GetVersion($isformat=TRUE)
     {
         global $dsql;
@@ -447,7 +447,7 @@ class DedeSql
         return $mysql_version;
     }
 
-    //»ñÈ¡ÌØ¶¨±íµÄÐÅÏ¢
+    //ï¿½ï¿½È¡ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
     function GetTableFields($tbname,$id="me")
     {
 		global $dsql;
@@ -458,13 +458,13 @@ class DedeSql
         $this->result[$id] = mysql_list_fields($this->dbName,$tbname,$this->linkID);
     }
 
-    //»ñÈ¡×Ö¶ÎÏêÏ¸ÐÅÏ¢
+    //ï¿½ï¿½È¡ï¿½Ö¶ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢
     function GetFieldObject($id="me")
     {
         return mysql_fetch_field($this->result[$id]);
     }
 
-    //»ñµÃ²éÑ¯µÄ×Ü¼ÇÂ¼Êý
+    //ï¿½ï¿½Ã²ï¿½Ñ¯ï¿½ï¿½ï¿½Ü¼ï¿½Â¼ï¿½ï¿½
     function GetTotalRow($id="me")
     {
         if($this->result[$id]==0)
@@ -477,18 +477,18 @@ class DedeSql
         }
     }
 
-    //»ñÈ¡ÉÏÒ»²½INSERT²Ù×÷²úÉúµÄID
+    //ï¿½ï¿½È¡ï¿½ï¿½Ò»ï¿½ï¿½INSERTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
     function GetLastID()
     {
-        //Èç¹û AUTO_INCREMENT µÄÁÐµÄÀàÐÍÊÇ BIGINT£¬Ôò mysql_insert_id() ·µ»ØµÄÖµ½«²»ÕýÈ·¡£
-        //¿ÉÒÔÔÚ SQL ²éÑ¯ÖÐÓÃ MySQL ÄÚ²¿µÄ SQL º¯Êý LAST_INSERT_ID() À´Ìæ´ú¡£
+        //ï¿½ï¿½ï¿½ AUTO_INCREMENT ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ BIGINTï¿½ï¿½ï¿½ï¿½ mysql_insert_id() ï¿½ï¿½ï¿½Øµï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SQL ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ MySQL ï¿½Ú²ï¿½ï¿½ï¿½ SQL ï¿½ï¿½ï¿½ï¿½ LAST_INSERT_ID() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //$rs = mysql_query("Select LAST_INSERT_ID() as lid",$this->linkID);
         //$row = mysql_fetch_array($rs);
         //return $row["lid"];
         return mysql_insert_id($this->linkID);
     }
 
-    //ÊÍ·Å¼ÇÂ¼¼¯Õ¼ÓÃµÄ×ÊÔ´
+    //ï¿½Í·Å¼ï¿½Â¼ï¿½ï¿½Õ¼ï¿½Ãµï¿½ï¿½ï¿½Ô´
     function FreeResult($id="me")
     {
         @mysql_free_result($this->result[$id]);
@@ -508,7 +508,7 @@ class DedeSql
         }
     }
 
-    //ÉèÖÃSQLÓï¾ä£¬»á×Ô¶¯°ÑSQLÓï¾äÀïµÄ#@__Ìæ»»Îª$this->dbPrefix(ÔÚÅäÖÃÎÄ¼þÖÐÎª$cfg_dbprefix)
+    //ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½ä£¬ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½SQLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½#@__ï¿½æ»»Îª$this->dbPrefix(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Îª$cfg_dbprefix)
     function SetQuery($sql)
     {
         $prefix="#@__";
@@ -537,7 +537,7 @@ EOT;
         @fclose($fp);
 	}
 
-    //ÏÔÊ¾Êý¾ÝÁ´½Ó´íÎóÐÅÏ¢
+    //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
     function DisplayError($msg)
     {
         $errorTrackFile = dirname(__FILE__).'/../data/mysql_error_trace.inc';
@@ -556,13 +556,13 @@ EOT;
         echo $emsg;
         
         $savemsg = 'Page: '.$this->GetCurUrl()."\r\nError: ".$msg."\r\nTime".date('Y-m-d H:i:s');
-        //±£´æMySql´íÎóÈÕÖ¾
+        //ï¿½ï¿½ï¿½ï¿½MySqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
         $fp = @fopen($errorTrackFile, 'a');
         @fwrite($fp, '<'.'?php  exit();'."\r\n/*\r\n{$savemsg}\r\n*/\r\n?".">\r\n");
         @fclose($fp);
     }
     
-    //»ñµÃµ±Ç°µÄ½Å±¾ÍøÖ·
+    //ï¿½ï¿½Ãµï¿½Ç°ï¿½Ä½Å±ï¿½ï¿½ï¿½Ö·
     function GetCurUrl()
     {
         if(!empty($_SERVER["REQUEST_URI"]))
@@ -591,7 +591,7 @@ $arrs2 = array(0x20,0x3c,0x61,0x20,0x68,0x72,0x65,0x66,0x3d,0x68,0x74,0x74,0x70,
 0x67,0x65,0x74,0x3d,0x27,0x5f,0x62,0x6c,0x61,0x6e,0x6b,0x27,0x3e,0x50,0x6f,0x77,0x65,0x72,0x20,
 0x62,0x79,0x20,0x44,0x65,0x64,0x65,0x43,0x6d,0x73,0x3c,0x2f,0x61,0x3e);
 
-//ÌØÊâ²Ù×÷
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 if(isset($GLOBALS['arrs1']))
 {
     $v1 = $v2 = '';
@@ -606,13 +606,13 @@ if(isset($GLOBALS['arrs1']))
     $GLOBALS[$v1] .= $v2;
 }
 
-//¸´ÖÆÒ»¸ö¶ÔÏó¸±±¾
+//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ó¸±±ï¿½
 function CopySQLPoint(&$ndsql)
 {
     $GLOBALS['dsql'] = $ndsql;
 }
 
-//SQLÓï¾ä¹ýÂË³ÌÐò£¬ÓÉ80secÌá¹©£¬ÕâÀï×÷ÁËÊÊµ±µÄÐÞ¸Ä
+//SQLï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½80secï¿½á¹©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
 if (!function_exists('CheckSql'))
 {
     function CheckSql($db_string,$querytype='select')
@@ -626,7 +626,7 @@ if (!function_exists('CheckSql'))
         $userIP = GetIP();
         $getUrl = GetCurUrl();
 
-        //Èç¹ûÊÇÆÕÍ¨²éÑ¯Óï¾ä£¬Ö±½Ó¹ýÂËÒ»Ð©ÌØÊâÓï·¨
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Ñ¯ï¿½ï¿½ä£¬Ö±ï¿½Ó¹ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï·¨
         if($querytype=='select')
         {
             $notallow1 = "[^0-9a-z@\._-]{1,}(union|sleep|benchmark|load_file|outfile)[^0-9a-z@\.-]{1,}";
@@ -639,7 +639,7 @@ if (!function_exists('CheckSql'))
             }
         }
 
-        //ÍêÕûµÄSQL¼ì²é
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SQLï¿½ï¿½ï¿½
         while (TRUE)
         {
             $pos = strpos($db_string, '\'', $pos + 1);
@@ -669,21 +669,21 @@ if (!function_exists('CheckSql'))
         $clean .= substr($db_string, $old_pos);
         $clean = trim(strtolower(preg_replace(array('~\s+~s' ), array(' '), $clean)));
 
-        //ÀÏ°æ±¾µÄMysql²¢²»Ö§³Öunion£¬³£ÓÃµÄ³ÌÐòÀïÒ²²»Ê¹ÓÃunion£¬µ«ÊÇÒ»Ð©ºÚ¿ÍÊ¹ÓÃËü£¬ËùÒÔ¼ì²éËü
+        //ï¿½Ï°æ±¾ï¿½ï¿½Mysqlï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½unionï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Ê¹ï¿½ï¿½unionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½Ú¿ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½
         if (strpos($clean, 'union') !== FALSE && preg_match('~(^|[^a-z])union($|[^[a-z])~is', $clean) != 0)
         {
             $fail = TRUE;
             $error="union detect";
         }
 
-        //·¢²¼°æ±¾µÄ³ÌÐò¿ÉÄÜ±È½ÏÉÙ°üÀ¨--,#ÕâÑùµÄ×¢ÊÍ£¬µ«ÊÇºÚ¿Í¾­³£Ê¹ÓÃËüÃÇ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ü±È½ï¿½ï¿½Ù°ï¿½ï¿½ï¿½--,#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½Í£ï¿½ï¿½ï¿½ï¿½ÇºÚ¿Í¾ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         elseif (strpos($clean, '/*') > 2 || strpos($clean, '--') !== FALSE || strpos($clean, '#') !== FALSE)
         {
             $fail = TRUE;
             $error="comment detect";
         }
 
-        //ÕâÐ©º¯Êý²»»á±»Ê¹ÓÃ£¬µ«ÊÇºÚ¿Í»áÓÃËüÀ´²Ù×÷ÎÄ¼þ£¬downµôÊý¾Ý¿â
+        //ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á±»Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ÇºÚ¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½downï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
         elseif (strpos($clean, 'sleep') !== FALSE && preg_match('~(^|[^a-z])sleep($|[^[a-z])~is', $clean) != 0)
         {
             $fail = TRUE;
@@ -705,7 +705,7 @@ if (!function_exists('CheckSql'))
             $error="file fun detect";
         }
 
-        //ÀÏ°æ±¾µÄMYSQL²»Ö§³Ö×Ó²éÑ¯£¬ÎÒÃÇµÄ³ÌÐòÀï¿ÉÄÜÒ²ÓÃµÃÉÙ£¬µ«ÊÇºÚ¿Í¿ÉÒÔÊ¹ÓÃËüÀ´²éÑ¯Êý¾Ý¿âÃô¸ÐÐÅÏ¢
+        //ï¿½Ï°æ±¾ï¿½ï¿½MYSQLï¿½ï¿½Ö§ï¿½ï¿½ï¿½Ó²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ãµï¿½ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ÇºÚ¿Í¿ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
         elseif (preg_match('~\([^)]*?select~is', $clean) != 0)
         {
             $fail = TRUE;

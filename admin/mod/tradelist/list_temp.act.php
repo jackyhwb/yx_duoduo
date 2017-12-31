@@ -25,7 +25,7 @@ if($_GET['do']=='daoru'){
 		$msg="操作完成共插入".$result['insert_num']."条新订单，更新".$result['update_num']."条订单，有".$result['bubian_num']."条订单不变";
 		jump(u(MOD,'list'),$msg);
 	}
-	echo mysql_error();
+	echo mysqli_error($duoduo->link);
 	
 	foreach($tradelist_temp as $vo){
 		$id=$vo['id'];
@@ -41,7 +41,7 @@ if($_GET['do']=='daoru'){
 			exit();
 		}
         $result =$duoduo->trade_ruku($vo,$result);
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 		$duoduo->delete('tradelist_temp','id="'.$id.'"');
 	}
 	$msg="共插入".$result['insert_num']."条新订单，更新".$result['update_num']."条订单，删除".$result['delete_num']."条订单，有".$result['bubian_num']."条订单不变";

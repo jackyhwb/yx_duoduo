@@ -38,7 +38,7 @@ else{
 		$duoduo->update($table,array('del'=>0),'id IN('.$ids.')',DEFAULT_SORT);
 		$word='还原完成';
 	}
-	$error=mysql_error();
+	$error=mysqli_error($duoduo->link);
 	
 	if(function_exists(MOD.'_'.ACT)){
 		$fun=MOD.'_'.ACT;

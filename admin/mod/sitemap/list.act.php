@@ -42,8 +42,8 @@ if($do=='jty'){
 			$data['sClassid']=$row['sClassid'];
 			$data['addtime']=date("Y-m-d H:i:s");
 			$duoduo->insert('pai_words',$data);
-			if(mysql_error()!=''){
-				echo mysql_error();exit;
+			if(mysqli_error($duoduo->link)!=''){
+				echo mysqli_error($duoduo->link);exit;
 			}
 		}
 	}

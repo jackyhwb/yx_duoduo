@@ -106,7 +106,7 @@ if($_POST['sub']!=''){
 		    unset($_POST['addtime']);
 		}
 		$duoduo->update(get_mall_table_name(),$_POST,'id="'.$id.'"');
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 		$word='修改';
 	}
 	del_ddcache('','sql/'.MOD);

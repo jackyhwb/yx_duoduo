@@ -50,7 +50,7 @@ else{
 		$duoduo->update(MOD,array('del'=>0),'id IN('.$ids.')',DEFAULT_SORT);
 		$word='还原完成';
 	}
-	$error=mysql_error();
+	$error=mysqli_error($duoduo->link);
     if(empty($error)){
 		include(ADMINROOT.'/mod/public/mod.update.php');
 		if($reycle==1){

@@ -67,7 +67,7 @@ if(isset($_GET['eventid']) && $_GET['eventid']!=''){
 				}
 				
 			}else{
-				$re=array('s'=>2,'r'=>mysql_error());
+				$re=array('s'=>2,'r'=>mysqli_error($duoduo->link));
 			}
 		}else{
 			$re=array('s'=>1,'r'=>'更新成功');

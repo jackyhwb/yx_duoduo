@@ -265,8 +265,8 @@ class ddget{
 		else{
 			$result['ignore']++;
 		}
-		if(mysql_error()!=''){
-			$re=array('s'=>0,'r'=>mysql_error());
+		if(mysqli_error($duoduo->link)!=''){
+			$re=array('s'=>0,'r'=>mysqli_error($duoduo->link));
 			echo dd_json_encode($re);exit;
 		}
 		unset($duoduo);
@@ -368,8 +368,8 @@ class ddget{
 			$result['ignore']++;
 		}
 		
-		if(mysql_error()!=''){
-			$re=array('s'=>0,'r'=>mysql_error());
+		if(mysqli_error($duoduo->link)!=''){
+			$re=array('s'=>0,'r'=>mysqli_error($duoduo->link));
 			echo dd_json_encode($re);exit;
 		}
 		$pinglun=0;

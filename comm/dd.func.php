@@ -857,7 +857,7 @@ function add_plugin_test($tbver_78)
     } else {
         $duoduo->insert('plugin', $tbver_83);
     }
-    $tbver_79 = mysql_error();
+    $tbver_79 = mysqli_error($duoduo->link);
     if ($tbver_79 == '') {
         return 1;
     } else {

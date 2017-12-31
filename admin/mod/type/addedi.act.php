@@ -29,7 +29,7 @@ if($_GET['do']=='chongzhi'){
 		$add['addtime']=time();
 		$add['sys']=1;
 		$id=$duoduo->replace('type',$add);
-		echo mysql_error();
+		echo mysqli_error($duoduo->link);
 	}
 	jump(-1,'同步完成');
 	exit();

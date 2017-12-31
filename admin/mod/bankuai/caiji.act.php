@@ -53,7 +53,7 @@ foreach($data as $vo){
 	}else{
 		$duoduo->update('bankuai',$vo,'id='.$vo['id']);
 	}
-	echo mysql_error();
+	echo mysqli_error($duoduo->link);
 	exit();
 }
 

@@ -78,7 +78,7 @@ foreach($a as $v){
 	elseif($mall['suoding']==0){//不锁定的不更新
 		$duoduo->update('mall',$b,'id="'.$mall['id'].'"');
 	}	
-	if(mysql_error()){
+	if(mysqli_error($duoduo->link)){
 		print_r($b);
 		echo $duoduo->lastsql;exit;
 	}
