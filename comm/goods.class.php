@@ -182,7 +182,7 @@ class goods{
 		$where.=" and (top_stime<=".time()." or top_stime=0) and (top_etime>=".time()." or top_etime=0)";
 		return (float)$this->duoduo->count($this->table_name,$where);
 	}
-	function top_goods($code,$page_size=1,$field="*",$order=" id desc",$where){
+	function top_goods($code,$page_size=1,$field="*",$order=" id desc",$where = ''){
 		if($code!=""){
 			$where.=" and code='".$code."'";
 		}
