@@ -161,4 +161,3 @@ if($admin_run==1){
 else{
 	$this->jindu($page);
 }
-?>

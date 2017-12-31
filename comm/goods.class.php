@@ -125,7 +125,7 @@ class goods{
 	}
 	
 	//获取单个商品
-	function good($id,$field="*",$where){
+	function good($id,$field="*",$where = ''){
 		$where=" del=0 ".$where;
 		if($id){
 			$where.=" and id=".(int)$id;
